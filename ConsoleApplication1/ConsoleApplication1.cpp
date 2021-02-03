@@ -2,7 +2,11 @@
 #include "Interface.cpp"
 #include "Interface.h"
 
-// start code :D
+/* start code :D
+ 1 Прогрма состоит из струтуры данных Очереди.
+ 2 Ромбовидная наследование.
+ 3 Интерфейс взаимодействия.
+ */
 
 int main()
 {
