@@ -1,7 +1,7 @@
-#include"Queue.h"
-#include"Party.h"
-#include"Teacher.h"
-#include"Teacher_Party.h"
+#include "Queue.h"
+#include "Party.h"
+#include "Teacher.h"
+#include "Teacher_Party.h"
 
 
 template<typename T>

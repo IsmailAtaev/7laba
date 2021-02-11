@@ -8,35 +8,35 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Party">
-    <Position X="18" Y="5.25" Width="1.5" />
+    <Position X="18" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAEQAAAAAAAAAAQAQAAAAAAAABAAAAAAgABBFA=</HashCode>
+      <HashCode>AEAAAAAEQAAAAAAAAAEQAQAAAAAAAABAAAAgAgABBFA=</HashCode>
       <FileName>Party.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Person">
     <Position X="16.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AIAAAEACBAAAAAQIAAAAAAAAIAAAAAAAIAAAAEQAQAA=</HashCode>
+      <HashCode>AIAAAEACBAAAAAQIAAEAAAAAIAAAAAAAIAAAAkQAQAA=</HashCode>
       <FileName>Person.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Queue&lt;T&gt;">
     <Position X="20" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAAAgCAEAACAAIIAAAAAQAEADAACBCAAAABgAgA=</HashCode>
+      <HashCode>AABIAAAAgCAEAECAAIIAAAAAQAEADAACBAAAAABAAgA=</HashCode>
       <FileName>Queue.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Teacher">
-    <Position X="14.25" Y="5.25" Width="1.5" />
+    <Position X="14.5" Y="6.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAEAKAAAQAAAAIAoiAAAAQACAAAAAACAAAAgAgACAAA=</HashCode>
+      <HashCode>AAEAKAAAQAAAAIAoiAEAAQACAAAAAACAAAAgAgACAAA=</HashCode>
       <FileName>Teacher.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Teacher_Party">
-    <Position X="16.25" Y="9.75" Width="1.5" />
+    <Position X="16" Y="11.25" Width="1.5" />
     <InheritanceLine Type="Teacher">
       <InheritanceModifierLabel ManuallyPlaced="true">
         <Position X="0.263" Y="0.022" />
@@ -48,8 +48,22 @@
       </InheritanceModifierLabel>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AQAAAAABQAAAAAAAAAAAAQAAAAAAAAgAAAACAgAQAAA=</HashCode>
+      <HashCode>AQAAAAABQAAAAAAAAAEAAQAAAAAAAAgAAAAiAgAQAAA=</HashCode>
       <FileName>Teacher_Party.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myExeption">
+    <Position X="13.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>myExeption.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="myExeption_Inpit">
+    <Position X="13.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgCAAAAgAAAAEAAA=</HashCode>
+      <FileName>myExeption.h</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="Node&lt;T&gt;">

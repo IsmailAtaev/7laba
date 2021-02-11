@@ -1,8 +1,12 @@
 ﻿  ConsoleApplication1.cpp
+  INPUT-STR.cpp
   Interface.cpp
+  myExeption.cpp
   Party.cpp
+  Person.cpp
   Queue.cpp
   Teacher.cpp
   Teacher_Party.cpp
   Создание кода...
-  ConsoleApplication1.vcxproj -> E:\Learning\2 КУРС  СЕМ (1)\ООП\8 lab\x64\Debug\ConsoleApplication1.exe
+Person.obj : error LNK2005: "class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl input_Str(void)" (?input_Str@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) уже определен в INPUT-STR.obj
+E:\Learning\2-Kurs-2-Sem\OOP\7laba\x64\Debug\ConsoleApplication1.exe : fatal error LNK1169: обнаружен многократно определенный символ - один или более

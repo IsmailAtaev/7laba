@@ -1,5 +1,7 @@
+#pragma once 
 #include "Person.h"
 #include <iomanip>
+#include "INPUT-STR.cpp"
 
 Person::Person(string Fname, string Lname, int Year)
 {
@@ -41,7 +43,12 @@ int Person::getYear() const {
 
 istream& operator>>(istream& in, Person& objp)
 {
-	cout << " ¬ведите фамилию: "; in >> objp.Firstname;
+	cout << " ¬ведите фамилию: "; 
+	string se;
+	se = input_Str();
+	objp.setFirstname(se);
+	
+	//in >> objp.Firstname;
 	cout << " ¬ведите  им€: "; in >> objp.Lastname;
 	cout << " ¬ведите год рождени€: "; in >> objp.Year;
 	return in;
