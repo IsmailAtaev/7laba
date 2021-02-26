@@ -36,7 +36,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Teacher_Party">
-    <Position X="16" Y="11.25" Width="1.5" />
+    <Position X="16.25" Y="11.25" Width="1.5" />
     <InheritanceLine Type="Teacher">
       <InheritanceModifierLabel ManuallyPlaced="true">
         <Position X="0.263" Y="0.022" />
@@ -55,7 +55,7 @@
   <Class Name="myExeption">
     <Position X="13.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AKAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AKAABAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
       <FileName>myExeption.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -67,7 +67,7 @@
     </TypeIdentifier>
   </Class>
   <Struct Name="Node&lt;T&gt;">
-    <Position X="20" Y="1.25" Width="1.5" />
+    <Position X="19.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQAAIAAAA=</HashCode>
       <FileName>Queue.h</FileName>

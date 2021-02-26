@@ -13,7 +13,6 @@ Party::Party(const Party& obj) :Person(obj)
 	this->Biogrophy = obj.Biogrophy;
 }
 
-
 void Party::setNameParty(const string objNameParty) {
 	this->NameParty = objNameParty;
 }
@@ -22,19 +21,19 @@ void Party::setBiogrophy(const string objBiogrophy) {
 	this->Biogrophy = objBiogrophy;
 }
 
-string Party::getNameParty()const{
+std::string Party::getNameParty()const{
 	return this->NameParty;
 }
 
-string Party::getBiogrophy()const{
+std::string Party::getBiogrophy()const{
 	return this->Biogrophy;
 }
 
 void Party::title()
 {
-	cout << "+---+---------------+-----------+---------------+---------------+----------------------------+" << endl;
-	cout << "| № |   Фамилия     |   Имя     | Год Рождения  |  партии       |       автобиография        |" << endl;
-	cout << "+---+---------------+-----------+---------------+---------------+----------------------------+" << endl;
+	std::cout << "+---+---------------+-----------+---------------+---------------+----------------------------+" << std::endl;
+	std::cout << "| № |   Фамилия     |   Имя     | Год Рождения  |  партии       |       автобиография        |" << std::endl;
+	std::cout << "+---+---------------+-----------+---------------+---------------+----------------------------+" << std::endl;
 }
 
 void Party::vvodSearch()
@@ -153,8 +152,10 @@ Party& Party::operator=(const Party& obj)
 istream& operator>>(istream& in, Party& objParty)
 {
 	in >> dynamic_cast<Person&>(objParty);
-	cout << " Название партии. "; in >> objParty.NameParty;
-	cout << " Введите автобиография. "; in >> objParty.Biogrophy;
+	cout << " Название партии. "; //in >> objParty.NameParty;
+	//objParty.setNameParty(input_Str());
+	cout << " Введите автобиография. "; //in >> objParty.Biogrophy;
+	//objParty.setBiogrophy(input_Str());
 	return in;
 }
 

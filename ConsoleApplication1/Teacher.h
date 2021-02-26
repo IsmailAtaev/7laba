@@ -1,6 +1,5 @@
 #pragma once
 #include"Person.h"
-#include<iomanip>
 
 class Teacher :virtual public Person
 {

@@ -181,14 +181,15 @@ bool Teacher::operator==(Teacher& obj)
 	return false;
 }
 
-
-
 istream& operator>>(istream& in, Teacher& obj)
 {
 	in >> dynamic_cast<Person&>(obj);
-	cout << " Введите Должность: "; in >> obj.Position;
-	cout << " Введите специальность: "; in >> obj.Speciality;
-	cout << " Введите количество научных трудов: "; in >> obj.Listpapers;
+	cout << " Введите Должность: "; 
+	obj.setPosition(input_Str(in)); 
+	cout << " Введите специальность: ";
+	obj.setSpeciality(input_Str(in));
+	cout << " Введите количество научных трудов: ";  //in >> obj.Listpapers;
+	obj.setListpapers(input_INT(in));
 	return in;
 }
 

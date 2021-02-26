@@ -105,6 +105,7 @@ void Interface<T>::Funck()
                 break;
             }
             case'8': {
+               
                 for (int i = 0; i < obj.GetSize(); i++)
                 {
                     for (int j =  i + 1; j < obj.GetSize(); j++)

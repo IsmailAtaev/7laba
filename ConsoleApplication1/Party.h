@@ -1,6 +1,5 @@
 #pragma once
 #include"Person.h"
-#include"Teacher.h"
 
 class Party : virtual public Person
 {
