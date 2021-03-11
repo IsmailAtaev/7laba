@@ -152,10 +152,10 @@ Party& Party::operator=(const Party& obj)
 istream& operator>>(istream& in, Party& objParty)
 {
 	in >> dynamic_cast<Person&>(objParty);
-	cout << " Название партии. "; //in >> objParty.NameParty;
-	//objParty.setNameParty(input_Str());
-	cout << " Введите автобиография. "; //in >> objParty.Biogrophy;
-	//objParty.setBiogrophy(input_Str());
+	cout << " Название партии. "; 
+	objParty.setNameParty(input_Str(in));
+	cout << " Введите автобиография. "; 
+	objParty.setBiogrophy(input_Str(in));
 	return in;
 }
 

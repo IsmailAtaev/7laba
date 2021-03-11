@@ -185,12 +185,12 @@ void Teacher_Party::vvodSearch()
 std::istream& operator>>(std::istream& in, Teacher_Party& RolParty)
 {
 	in >> dynamic_cast<Teacher&>(RolParty);
-	std::cout << " Введите название партии. "; //in >> RolParty.NameParty;
-	//RolParty.setNameParty(input_Str());
-	std::cout << " Введите автобиография. ";// in >> RolParty.Biogrophy; 
-	//RolParty.setBiogrophy(input_Str());
-	std::cout << " Введите рол в партии. ";// in >> RolParty.Rol_In_Party;
-	//RolParty.setRol_In_Party(input_Str());
+	std::cout << " Введите название партии. ";
+	RolParty.setNameParty(input_Str(in));
+	std::cout << " Введите автобиография. ";
+	RolParty.setBiogrophy(input_Str(in));
+	std::cout << " Введите рол в партии. ";
+	RolParty.setRol_In_Party(input_Str(in));
 	return in;
 }
 

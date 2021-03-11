@@ -33,7 +33,7 @@ public:
     Queue<T>* sSearch();
     void Edit();
     static void Title() {
-        T tit;
+        T tit{};
         tit.title();
     }
 };

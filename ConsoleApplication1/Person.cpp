@@ -41,12 +41,13 @@ int Person::getYear() const {
 
 std::istream& operator>>(std::istream& in, Person& objp)
 {
+
 	std::cout << " ¬ведите фамилию: ";
 	objp.setFirstname(input_Str(in));
 	std::cout << " ¬ведите  им€: ";
 	objp.setLastname(input_Str(in));
 	std::cout << " ¬ведите год рождени€: ";
-	objp.setYear(input_INT(in));
+	objp.setYear(input_INT(in,0,150));
 	return in;
 }
 

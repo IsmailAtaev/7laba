@@ -1,6 +1,7 @@
 #include "Teacher.h"
 
-Teacher::Teacher(string Fname, string Lname, int YearOfBirth, string position, string speciality, int listpapers) :Person(Fname, Lname, YearOfBirth)
+Teacher::Teacher(string Fname, string Lname, int YearOfBirth, string position, string speciality, int listpapers)
+	:Person(Fname, Lname, YearOfBirth)
 {
 	this->Position = position;
 	this->Speciality = speciality;
@@ -47,7 +48,7 @@ void Teacher::title()
 
 void Teacher::edit()
 {
-	char ss = 0;
+
 	system("cls");
 	rewind stdin;
 	cout << " Изменить" << endl;
@@ -58,56 +59,55 @@ void Teacher::edit()
 	cout << " 4 Должность: " << endl;
 	cout << " 5 Специальность: " << endl;
 	cout << " 6 Количество научных трудов:" << endl;
+	char ss = 0;
 	cin >> ss;
 	system("cls");
 	switch (ss)
 	{
 		case'1': {
-			string fname;
-			cout << " Введите фамилию: "; cin >> fname;
-			this->setFirstname(fname);
+			cout << " Введите фамилию: "; 
+			this->setFirstname(input_Str(cin));
 			break;
 		}
 		case'2': {
-			string lname;
-			cout << " Введите имя: "; cin >> lname;
-			this->setLastname(lname);
+			cout << " Введите имя: ";
+			this->setLastname(input_Str(cin));
 			break;
 		}
 		case'3': {
-			int age = 0;
-			cout << " Введите год рождения: "; cin >> age;
-			this->setYear(age);
+			int r;
+			cout << " Введите год рождения: "; cin >> r;
+			this->setYear(r);
 			break;
 		}
 		case'4': {
-			string position;
-			cout << " Введите Должность: "; cin >> position;
-			this->setPosition(position);
+			cout << " Введите Должность: ";
+			this->setPosition(input_Str(cin));
 			break;
 		}
 		case'5': {
-			string speciati;
-			cout << " Введите специальность: "; cin >> speciati;
-			this->setSpeciality(speciati);
+			cout << " Введите специальность: "; 
+			this->setSpeciality(input_Str(cin));
 			break;
 		}
 		case'6': {
-			int listpapers = 0;
-			cout << " Введите количество научных трудов: "; cin >> listpapers;
-			this->setListpapers(listpapers);
+			int m = 0;
+			cout << " Введите количество научных трудов: "; cin >> m;
+			this->setListpapers(m);
 			break;
 		}
-		default:
+		default: {
+			cout << " Некоректный ввод\tВведите соотвестующие цифры" << endl;
+			cin.clear(0);
+			rewind(stdin);
 			break;
+		}
 	}
 }
 
 void Teacher::vvodSearch()
 {
 	char gg = 0;
-	string elem;
-	int count = 0;
 	cout << " Поиск по ?" << endl;
 	cout << "1 Фамилию: " << endl;
 	cout << "2 Имя: " << endl;
@@ -119,40 +119,40 @@ void Teacher::vvodSearch()
 	switch (gg)
 	{
 	case'1': {
-		cout << " Введите фамилию: "; cin >> elem;
-		this->setFirstname(elem);
+		cout << " Введите фамилию: ";
+		this->setFirstname(input_Str(cin));
 		break;
 	}
 	case'2': {
-		cout << " Введите  имя: "; cin >> elem;
-		this->setLastname(elem);
+		cout << " Введите  имя: ";
+		this->setLastname(input_Str(cin));
 		break;
 	}
 	case'3': {
-		cout << " Введите год рождения: "; cin >> count;
-		this->setYear(count);
+		int u = 0;
+		cout << " Введите год рождения: "; cin >> u;
+		this->setYear(u);
 		break;
 	}
 	case'4': {
-		cout << " Введите Должность: "; cin >> elem;
-		this->setPosition(elem);
+		cout << " Введите Должность: ";
+		this->setPosition(input_Str(cin));
 		break;
 	}
 	case'5': {
-		string speciality;
-		cout << " Введите специальность: "; cin >> speciality;
-		this->setSpeciality(speciality);
+		cout << " Введите специальность: ";
+		this->setSpeciality(input_Str(cin));
 		break;
 	}
 	case'6': {
-		cout << " Введите количество научных трудов: "; cin >> count;
-		this->setListpapers(count);
+		int i = 0;
+		cout << " Введите количество научных трудов: "; cin >> i;
+		this->setListpapers(i);
 		break;
 	}
-	default:
+	default: 
 		break;
 	}
-
 }
 
 Teacher& Teacher::operator=(const Teacher& obj)
@@ -188,8 +188,8 @@ istream& operator>>(istream& in, Teacher& obj)
 	obj.setPosition(input_Str(in)); 
 	cout << " Введите специальность: ";
 	obj.setSpeciality(input_Str(in));
-	cout << " Введите количество научных трудов: ";  //in >> obj.Listpapers;
-	obj.setListpapers(input_INT(in));
+	cout << " Введите количество научных трудов: ";
+	obj.setListpapers(input_INT(in,0,500));
 	return in;
 }
 

@@ -1,6 +1,5 @@
 ﻿  ConsoleApplication1.cpp
   Interface.cpp
-  myExeption.cpp
   Party.cpp
   Person.cpp
   Queue.cpp

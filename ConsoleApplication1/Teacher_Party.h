@@ -2,8 +2,6 @@
 #include "Party.h"
 #include "Teacher.h"
 
-
-
 class Teacher_Party : public Teacher, public Party
 {
 private:

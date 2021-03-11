@@ -57,17 +57,16 @@ void Queue<T>::Edit()
         return;
     }
     else {
-        int  k = 0;
         T perem{};
         this->show();
-        cout << " Номер редактируемого элемента: "; cin >> k;
+        cout << " Номер редактируемого элемента: "; 
+        int  k ;
+        cin >> k;
         if (k > this->GetSize() || k <= 0) {
             cout << " Выхад за предел " << endl;
         }
         else {
             (*this)[--k].edit();
-            cout << " Успешно изменено данные." << endl;
-
         }
     }
 }
