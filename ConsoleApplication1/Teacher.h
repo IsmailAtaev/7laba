@@ -4,20 +4,20 @@
 class Teacher :virtual public Person
 {
 private:
-	string Position; // ƒолжность
-	string Speciality; // специальность
+	std::string Position; // ƒолжность
+	std::string Speciality; // специальность
 	int Listpapers; // список научных трудов
 public:
-	Teacher(string Fname = "", string Lname = "", int YearOfBirth = 0, string position = "", string speciality = "", int listpapers = 0);
+	Teacher(std::string Fname = "", std::string Lname = "", int YearOfBirth = 0, std::string position = "", std::string speciality = "", int listpapers = 0);
 	Teacher(const Teacher& objTeacher);
 	Teacher& operator=(const Teacher& obj);
 
-	void setPosition(const string);
-	void setSpeciality(const string);
+	void setPosition(const std::string);
+	void setSpeciality(const std::string);
 	void setListpapers(const int);
 	
-	string getPosition()const;
-	string getSpeciality()const;
+	std::string getPosition()const;
+	std::string getSpeciality()const;
 	int getListpapers()const;
 	
 	static void title();
@@ -26,8 +26,14 @@ public:
 	void vvodSearch()override;
 
 	bool operator ==(Teacher& objs);
-	friend istream& operator>>(istream& in, Teacher&);
-	friend ostream& operator<<(ostream& out, Teacher&);
+	friend std::istream& operator>>(std::istream& in, Teacher&);
+	friend std::ostream& operator<<(std::ostream& out, Teacher&);
+
+	friend std::ifstream& operator >> (std::ifstream& finT, Teacher& objT);
+	friend std::ofstream& operator << (std::ofstream& foutT, Teacher& objT);
+
+	friend std::fstream& operator>> (std::fstream& f, Teacher& objT);
+	friend std::fstream& operator<< (std::fstream& f, Teacher& objT);
 
 	~Teacher() { }
 };

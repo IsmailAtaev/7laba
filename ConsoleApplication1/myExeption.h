@@ -21,7 +21,7 @@ public:
 		this->str = str; 
 	}
 	void Print() {
-		std::cout <<" Код ошибки № " << this->getNumberCod() << this->str << std::endl; 
+		std::cout << " Код ошибки № " << this->getNumberCod() << this->str << std::endl; 
 	}
 	~myExeption_Inpit() { }
 };

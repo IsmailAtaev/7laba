@@ -48,6 +48,7 @@ std::istream& operator>>(std::istream& in, Person& objp)
 	objp.setLastname(input_Str(in));
 	std::cout << " ¬ведите год рождени€: ";
 	objp.setYear(input_INT(in,0,150));
+
 	return in;
 }
 
@@ -58,3 +59,29 @@ std::ostream& operator<<(std::ostream& out, Person& objp)
 		<< std::setw(14) << std::right << objp.Year;
 	return out;
 }
+
+
+std::ifstream& operator>>(std::ifstream& finP, Person& objP)
+{
+	finP >> objP.Firstname >> objP.Lastname >> objP.Year;
+	return finP;
+}
+
+std::ofstream& operator<<(std::ofstream& foutP, Person& objP)
+{
+	foutP << objP.Firstname << " " << objP.Lastname << " " << objP.Year << " ";
+	return foutP;
+}
+
+std::fstream& operator>>(std::fstream& f, Person& objP)
+{
+	f >> objP.Firstname >> objP.Lastname >> objP.Year;
+	return f;
+}
+
+std::fstream& operator<<(std::fstream& f, Person& objP)
+{
+	f << objP.Firstname << " " << objP.Lastname << " " << objP.Year;
+	return f;
+}
+

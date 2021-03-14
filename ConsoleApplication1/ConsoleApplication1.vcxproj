@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ConsoleApplication1.cpp" />
+    <ClCompile Include="File.cpp" />
     <ClCompile Include="Interface.cpp" />
     <ClCompile Include="myExeption.cpp" />
     <ClCompile Include="Party.cpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="Teacher_Party.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="File.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Interface.h" />
     <ClInclude Include="myExeption.h" />

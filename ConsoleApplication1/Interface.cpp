@@ -7,24 +7,27 @@ inline void Interface<T>::menu()
     char ch = 0;
     do {
         system("cls");
-        cout << " 1. Учитель." << endl;
-        cout << " 2. Партия." << endl;
-        cout << " 3. Учитель Партия. " << endl;
-        cout << " 0. Выход. ";   cin >> ch;
+        std::cout << " 1. Учитель." << std::endl;
+        std::cout << " 2. Партия." << std::endl;
+        std::cout << " 3. Учитель Партия. " << std::endl;
+        std::cout << " 0. Выход. ";   std::cin >> ch;
         system("cls");
         switch (ch) {
             case'1': {
-                Interface<Teacher> objTeacher;
+                std::string filename = "Teacher.txt";
+                Interface<Teacher> objTeacher(filename);
                 objTeacher.Funck();
                 break;
             }
             case'2': {
-                Interface<Party> objParty;
+                std::string filename = "Party.txt";
+                Interface<Party> objParty(filename);
                 objParty.Funck();
                 break;
             }
             case'3': {
-                Interface<Teacher_Party> objTeacher_Party;
+                std::string filename = "Teacher_Party.txt";
+                Interface<Teacher_Party> objTeacher_Party(filename);
                 objTeacher_Party.Funck();
                 break;
             }
@@ -40,28 +43,32 @@ void Interface<T>::Funck()
     T value{};
     T result;
     char ch = NULL;
+    int flags = 0;
     do {
         system("cls");
-        cout << " ---===[ Выбор меню ]===---" << endl;
-        cout << " 1. Добавить элемент." << endl;
-        cout << " 2. Вывод на экран." << endl;
-        cout << " 3. Удалить." << endl;
-        cout << " 4. Удалить и возвратить." << endl;
-        cout << " 5. Удалить Все." << endl;
-        cout << " 6. Поиск." << endl;
-        cout << " 7. Изменить." << endl;
-        cout << " 8. Сортировать по Фамили." << endl;
-        cout << " 0. Возврат в главный меню.\t  "; cin >> ch;
+        std::cout << " ---===[ Выбор меню ]===---" << std::endl;
+        std::cout << " 1.  Добавить элемент." << std::endl;
+        std::cout << " 2.  Вывод на экран." << std::endl;
+        std::cout << " 3.  Удалить." << std::endl;
+        std::cout << " 4.  Удалить и возвратить." << std::endl;
+        std::cout << " 5.  Удалить Все." << std::endl;
+        std::cout << " 6.  Поиск." << std::endl;
+        std::cout << " 7.  Изменить." << std::endl;
+        std::cout << " 8.  Сортировать по Фамили." << std::endl;
+        std::cout << " 9.  Читать из файла." << std::endl;
+        std::cout << " 10. Запись в файла." << std::endl;
+        std::cout << " 0.  Возврат в главный меню.\t  "; 
+        flags = input_INT(cin,-1,11);
         system("cls");
-        switch (ch)
+        switch (flags)
         {
-            case'1': {
+            case 1: {
                 rewind stdin;
                 cin >> value;
                 obj.Enqueue(value);
                 break;
             }
-            case'2': {
+            case 2: {
                 if (!obj.Empty()) {
                     obj.Title();
                     obj.show();
@@ -70,15 +77,15 @@ void Interface<T>::Funck()
                 cout << "Очередь пуст!!! " << endl;
                 break;
             }
-            case'3': {
+            case 3 : {
                 if (!obj.Empty()) {
                     obj.Dequeue1();
                     break;
                 }
-                cout << "Очередь пуст!!! " << endl;
+                std::cout << "Очередь пуст!!! " << endl;
                 break;
               }
-            case'4': {
+            case 4: {
                 if (!obj.Empty()) {
                     result = obj.Dequeue();
                     cout << " Удаленный данные:  " << result << endl;
@@ -86,25 +93,25 @@ void Interface<T>::Funck()
                 else cout << "  Пуст! " << endl;
                 break;
             }
-            case'5': {
+            case 5: {
                 obj.Clear();
                 break;
             }
-            case'6': {
+            case 6: {
                 if (!obj.Empty()) {
                     Queue<T>* elem = obj.sSearch();
                     obj.Title();
                     elem->show();
                     delete elem;
                 }
-                else cout << "  Пуст! " << endl;
+                else std::cout << "  Пуст! " << std::endl;
                 break;
             }
-            case'7': {
+            case 7: {
                 obj.Edit();
                 break;
             }
-            case'8': {
+            case 8: {
                
                 for (int i = 0; i < obj.GetSize(); i++)
                 {
@@ -117,6 +124,35 @@ void Interface<T>::Funck()
                             obj[j] = temp;
                         }
                     }
+                }
+                break;
+            }
+            case 9: {
+                FileTXT<T> file(fileN);
+                T data;
+                obj.Clear();
+
+
+
+                while (1) 
+                {
+                    if (file.REndFile())
+                        break;
+                    file.readRrcordInFile(data);
+                    obj.Enqueue(data);
+                }
+
+
+
+                break;
+            }
+
+            case 10: {
+                FileTXT<T> file(fileN);
+                while (obj.GetSize() != 0)
+                {
+                    T data = obj.Dequeue();
+                    file.writeRecordInFile(data);
                 }
                 break;
             }

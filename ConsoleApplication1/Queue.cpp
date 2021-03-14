@@ -7,7 +7,7 @@
 template<typename T>
 void Queue<T>::Clear() {
     if (this->Empty()) {
-        cout << " Пусто!" << endl;
+        std::cout << " Пусто!" << std::endl;
         return;
     }
 
@@ -22,7 +22,7 @@ void Queue<T>::show() {
         return;
     Node<T>* temp = head;
     for (int i = 0; i < size; i++) {
-        cout << "|" << setw(2) << i + 1 << "|" << temp->data << endl;
+        std::cout << "|" << setw(2) << i + 1 << "|" << temp->data << std::endl;
         temp = temp->prev;
     }
 }
@@ -32,7 +32,7 @@ Queue<T>* Queue<T>::sSearch()
 {
     Queue<T>* geler = new Queue<T>();
     if (this->Empty()) {
-        cout << " Очередь пуст нечего искать ! " << endl;
+        std::cout << " Очередь пуст нечего искать ! " << std::endl;
     }
     else {
         T ress{};
@@ -53,17 +53,17 @@ template<typename T>
 void Queue<T>::Edit()
 {
     if (this->Empty()) {
-        cout << "\tПусто" << endl;
+        std::cout << "\tПусто" << endl;
         return;
     }
     else {
         T perem{};
         this->show();
-        cout << " Номер редактируемого элемента: "; 
+        std::cout << " Номер редактируемого элемента: ";
         int  k ;
-        cin >> k;
+        std::cin >> k;
         if (k > this->GetSize() || k <= 0) {
-            cout << " Выхад за предел " << endl;
+            std::cout << " Выхад за предел " << std::endl;
         }
         else {
             (*this)[--k].edit();
@@ -89,8 +89,6 @@ T& Queue<T>::Peek() {
         return head->data;
     else {
         return T();
-        /*T* temp = nullptr;
-        return *temp;*/
     }
 }
 

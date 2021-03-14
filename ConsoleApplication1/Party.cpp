@@ -1,6 +1,6 @@
 #include "Party.h"
 
-Party::Party(string Fname, string Lname, int YearOfBirth, string NameParty, string Biogrophy) 
+Party::Party(std::string Fname, std::string Lname, int YearOfBirth, std::string NameParty, std::string Biogrophy)
 	:Person(Fname, Lname, YearOfBirth)
 {
 	this->NameParty = NameParty;
@@ -13,11 +13,11 @@ Party::Party(const Party& obj) :Person(obj)
 	this->Biogrophy = obj.Biogrophy;
 }
 
-void Party::setNameParty(const string objNameParty) {
+void Party::setNameParty(const std::string objNameParty) {
 	this->NameParty = objNameParty;
 }
 
-void Party::setBiogrophy(const string objBiogrophy) {
+void Party::setBiogrophy(const std::string objBiogrophy) {
 	this->Biogrophy = objBiogrophy;
 }
 
@@ -39,34 +39,34 @@ void Party::title()
 void Party::vvodSearch()
 {
 	char gg = 0;
-	string elem;
+	std::string elem;
 	int count = 0;
-	cout << " Поиск по ?" << endl;
-	cout << "1 Фамилию: " << endl;
-	cout << "2 Имя: " << endl;
-	cout << "3 Год рождения: " << endl;
-	cout << "4 Название партии. " << endl;
-	cout << "5 Автобиография. " << endl;
-	cin >> gg;
+	std::cout << " Поиск по ?" << std::endl;
+	std::cout << "1 Фамилию: " << std::endl;
+	std::cout << "2 Имя: " << std::endl;
+	std::cout << "3 Год рождения: " << std::endl;
+	std::cout << "4 Название партии. " << std::endl;
+	std::cout << "5 Автобиография. " << std::endl;
+	std::cin >> gg;
 	switch (gg)
 	{
 	case'1': {
-		cout << " Введите фамилию: "; cin >> elem;
+		std::cout << " Введите фамилию: "; std::cin >> elem;
 		this->setFirstname(elem);
 		break;
 	}
 	case'2': {
-		cout << " Введите  имя: "; cin >> elem;
+		std::cout << " Введите  имя: "; std::cin >> elem;
 		this->setLastname(elem);
 		break;
 	}
 	case'3': {
-		cout << " Введите год рождения: "; cin >> count;
+		std::cout << " Введите год рождения: "; std::cin >> count;
 		this->setYear(count);
 		break;
 	}
-	case'4': cout << " Введите название партии. "; cin >> this->NameParty; break;
-	case'5': cout << " Введите автобиография. "; cin >> this->Biogrophy; break;
+	case'4': std::cout << " Введите название партии. "; std::cin >> this->NameParty; break;
+	case'5': std::cout << " Введите автобиография. "; std::cin >> this->Biogrophy; break;
 	default:
 		break;
 	}
@@ -78,44 +78,44 @@ void Party::edit()
 	char ss = 0;
 	system("cls");
 	rewind stdin;
-	cout << "\tИзменить" << endl;
-	cout << "____________________________________" << endl;
-	cout << " 1 Фамилию: " << endl;
-	cout << " 2 Имя: " << endl;
-	cout << " 3 Год рождения: " << endl;
-	cout << " 4 Партия: " << endl;
-	cout << " 5 Автобиография: " << endl;
-	 cin >> ss;
+	std::cout << "\tИзменить" << std::endl;
+	std::cout << "____________________________________" << std::endl;
+	std::cout << " 1 Фамилию: " << std::endl;
+	std::cout << " 2 Имя: " << std::endl;
+	std::cout << " 3 Год рождения: " << std::endl;
+	std::cout << " 4 Партия: " << std::endl;
+	std::cout << " 5 Автобиография: " << std::endl;
+	std::cin >> ss;
 	system("cls");
 	switch (ss)
 	{
 		case'1': {
-			string fname;
-			cout << " Введите фамилию: "; cin >> fname;
+			std::string fname;
+			std::cout << " Введите фамилию: "; std::cin >> fname;
 			this->setFirstname(fname);
 			break;
 		}
 		case'2': {
-			string lname;
-			cout << " Введите имя: "; cin >> lname;
+			std::string lname;
+			std::cout << " Введите имя: "; std::cin >> lname;
 			this->setLastname(lname);
 			break;
 		}
 		case'3': {
 			int age = 0;
-			cout << " Введите год рождения: "; cin >> age;
+			std::cout << " Введите год рождения: "; std::cin >> age;
 			this->setYear(age);
 			break;
 		}
 		case'4': {
-			string nparty;
-			cout << " Введите название партии: "; cin >> nparty;
+			std::string nparty;
+			std::cout << " Введите название партии: "; std::cin >> nparty;
 			this->setNameParty(nparty);
 			break;
 		}
 		case'5': {
-			string bio;
-			cout << " Введите биография: "; cin >> bio;
+			std::string bio;
+			std::cout << " Введите биография: "; std::cin >> bio;
 			this->setBiogrophy(bio);
 			break;
 		}
@@ -149,20 +149,49 @@ Party& Party::operator=(const Party& obj)
 	return *this;
 }
 
-istream& operator>>(istream& in, Party& objParty)
+std::istream& operator>>(std::istream& in, Party& objParty)
 {
 	in >> dynamic_cast<Person&>(objParty);
-	cout << " Название партии. "; 
+	std::cout << " Название партии. ";
 	objParty.setNameParty(input_Str(in));
-	cout << " Введите автобиография. "; 
+	std::cout << " Введите автобиография. ";
 	objParty.setBiogrophy(input_Str(in));
 	return in;
 }
 
-ostream& operator<<(ostream& out, Party& objParty)
+std::ostream& operator<<(std::ostream& out, Party& objParty)
 {
 	out << dynamic_cast<Person&>(objParty);
-	out << setw(17) << std::right << objParty.NameParty 
-		<< setw(25) << std::right << objParty.Biogrophy;
+	out << std::setw(17) << std::right << objParty.NameParty
+		<< std::setw(25) << std::right << objParty.Biogrophy;
 	return out;
+}
+
+std::ifstream& operator>>(std::ifstream& finPa, Party& objPa)
+{
+	finPa >> dynamic_cast<Person&>(objPa)
+		>> objPa.NameParty
+		>> objPa.Biogrophy;
+	return finPa;
+}
+
+std::ofstream& operator<<(std::ofstream& foutPa, Party& objPa)
+{
+	foutPa << dynamic_cast<Person&> (objPa)
+		<< objPa.NameParty << " "
+		<< objPa.Biogrophy << " ";
+	return foutPa;
+}
+
+std::fstream& operator>>(std::fstream& f, Party& objT)
+{
+	f >> dynamic_cast<Person&>(objT) >> objT.NameParty >> objT.Biogrophy;
+	return f;
+}
+
+std::fstream& operator<<(std::fstream& f, Party& objT)
+{
+
+	f << dynamic_cast<Person&> (objT)<< objT.NameParty << " " << objT.Biogrophy << std::endl;
+	return f;
 }

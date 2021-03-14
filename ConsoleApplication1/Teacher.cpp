@@ -1,6 +1,7 @@
 #include "Teacher.h"
+#include "Header.h"
 
-Teacher::Teacher(string Fname, string Lname, int YearOfBirth, string position, string speciality, int listpapers)
+Teacher::Teacher(std::string Fname, std::string Lname, int YearOfBirth, std::string position, std::string speciality, int listpapers)
 	:Person(Fname, Lname, YearOfBirth)
 {
 	this->Position = position;
@@ -15,11 +16,11 @@ Teacher::Teacher(const Teacher& objTeacher) :Person(objTeacher)
 	this->Listpapers = objTeacher.Listpapers;
 }
 
-void Teacher::setPosition(const string tempPosition) {
+void Teacher::setPosition(const std::string tempPosition) {
 	this->Position = tempPosition;
 }
 
-void Teacher::setSpeciality(const string tempSpeciality){
+void Teacher::setSpeciality(const std::string tempSpeciality){
 	this->Speciality = tempSpeciality;
 }
 
@@ -27,11 +28,11 @@ void Teacher::setListpapers(const int tempListpapers) {
 	this->Listpapers = tempListpapers;
 }
 
-string Teacher::getPosition()const {
+std::string Teacher::getPosition()const {
 	return this->Position;
 }
 
-string Teacher::getSpeciality() const {
+std::string Teacher::getSpeciality() const {
 	return this->Speciality;
 }
 
@@ -41,9 +42,9 @@ int Teacher::getListpapers() const {
 
 void Teacher::title() 
 {
-	cout << "+---+---------------+-----------+---------------+---------------+-----------------+---------------------+" << endl;
-	cout << "| № |   Фамилия     |   Имя     | Год Рождения  |   Должность   |  Специальность  |   Список.науч.труд. |" << endl;
-	cout << "+---+---------------+-----------+---------------+---------------+-----------------+---------------------+" << endl;
+	std::cout << "+---+---------------+-----------+---------------+---------------+-----------------+---------------------+" << std::endl;
+	std::cout << "| № |   Фамилия     |   Имя     | Год Рождения  |   Должность   |  Специальность  |   Список.науч.труд. |" << std::endl;
+	std::cout << "+---+---------------+-----------+---------------+---------------+-----------------+---------------------+" << std::endl;
 }
 
 void Teacher::edit()
@@ -51,54 +52,54 @@ void Teacher::edit()
 
 	system("cls");
 	rewind stdin;
-	cout << " Изменить" << endl;
-	cout << "____________________________________" << endl;
-	cout << " 1 Фамилию: " << endl;
-	cout << " 2 Имя: " << endl;
-	cout << " 3 Год рождения: " << endl;
-	cout << " 4 Должность: " << endl;
-	cout << " 5 Специальность: " << endl;
-	cout << " 6 Количество научных трудов:" << endl;
+	std::cout << " Изменить" << std::endl;
+	std::cout << "____________________________________" << std::endl;
+	std::cout << " 1 Фамилию: " << std::endl;
+	std::cout << " 2 Имя: " << std::endl;
+	std::cout << " 3 Год рождения: " << std::endl;
+	std::cout << " 4 Должность: " << std::endl;
+	std::cout << " 5 Специальность: " << std::endl;
+	std::cout << " 6 Количество научных трудов:" << std::endl;
 	char ss = 0;
-	cin >> ss;
+	std::cin >> ss;
 	system("cls");
 	switch (ss)
 	{
 		case'1': {
-			cout << " Введите фамилию: "; 
-			this->setFirstname(input_Str(cin));
+			std::cout << " Введите фамилию: "; 
+			this->setFirstname(input_Str(std::cin));
 			break;
 		}
 		case'2': {
-			cout << " Введите имя: ";
-			this->setLastname(input_Str(cin));
+			std::cout << " Введите имя: ";
+			this->setLastname(input_Str(std::cin));
 			break;
 		}
 		case'3': {
 			int r;
-			cout << " Введите год рождения: "; cin >> r;
+			std::cout << " Введите год рождения: "; std::cin >> r;
 			this->setYear(r);
 			break;
 		}
 		case'4': {
-			cout << " Введите Должность: ";
-			this->setPosition(input_Str(cin));
+			std::cout << " Введите Должность: ";
+			this->setPosition(input_Str(std::cin));
 			break;
 		}
 		case'5': {
-			cout << " Введите специальность: "; 
-			this->setSpeciality(input_Str(cin));
+			std::cout << " Введите специальность: "; 
+			this->setSpeciality(input_Str(std::cin));
 			break;
 		}
 		case'6': {
 			int m = 0;
-			cout << " Введите количество научных трудов: "; cin >> m;
+			std::cout << " Введите количество научных трудов: "; std::cin >> m;
 			this->setListpapers(m);
 			break;
 		}
 		default: {
-			cout << " Некоректный ввод\tВведите соотвестующие цифры" << endl;
-			cin.clear(0);
+			std::cout << " Некоректный ввод\tВведите соотвестующие цифры" << std::endl;
+			std::cin.clear(0);
 			rewind(stdin);
 			break;
 		}
@@ -108,45 +109,45 @@ void Teacher::edit()
 void Teacher::vvodSearch()
 {
 	char gg = 0;
-	cout << " Поиск по ?" << endl;
-	cout << "1 Фамилию: " << endl;
-	cout << "2 Имя: " << endl;
-	cout << "3 Год рождения: " << endl;
-	cout << "4 Должность: " << endl;
-	cout << "5 Специальность: " << endl;
-	cout << "6 Количество научных трудов: " << endl;
-	cin >> gg;
+	std::cout << " Поиск по ?" << std::endl;
+	std::cout << "1 Фамилию: " << std::endl;
+	std::cout << "2 Имя: " << std::endl;
+	std::cout << "3 Год рождения: " << std::endl;
+	std::cout << "4 Должность: " << std::endl;
+	std::cout << "5 Специальность: " << std::endl;
+	std::cout << "6 Количество научных трудов: " << std::endl;
+	std::cin >> gg;
 	switch (gg)
 	{
 	case'1': {
-		cout << " Введите фамилию: ";
-		this->setFirstname(input_Str(cin));
+		std::cout << " Введите фамилию: ";
+		this->setFirstname(input_Str(std::cin));
 		break;
 	}
 	case'2': {
-		cout << " Введите  имя: ";
-		this->setLastname(input_Str(cin));
+		std::cout << " Введите  имя: ";
+		this->setLastname(input_Str(std::cin));
 		break;
 	}
 	case'3': {
 		int u = 0;
-		cout << " Введите год рождения: "; cin >> u;
+		std::cout << " Введите год рождения: "; std::cin >> u;
 		this->setYear(u);
 		break;
 	}
 	case'4': {
-		cout << " Введите Должность: ";
-		this->setPosition(input_Str(cin));
+		std::cout << " Введите Должность: ";
+		this->setPosition(input_Str(std::cin));
 		break;
 	}
 	case'5': {
-		cout << " Введите специальность: ";
-		this->setSpeciality(input_Str(cin));
+		std::cout << " Введите специальность: ";
+		this->setSpeciality(input_Str(std::cin));
 		break;
 	}
 	case'6': {
 		int i = 0;
-		cout << " Введите количество научных трудов: "; cin >> i;
+		std::cout << " Введите количество научных трудов: "; std::cin >> i;
 		this->setListpapers(i);
 		break;
 	}
@@ -181,23 +182,51 @@ bool Teacher::operator==(Teacher& obj)
 	return false;
 }
 
-istream& operator>>(istream& in, Teacher& obj)
+std::istream& operator>>(std::istream& in, Teacher& obj)
 {
 	in >> dynamic_cast<Person&>(obj);
-	cout << " Введите Должность: "; 
+	std::cout << " Введите Должность: ";
 	obj.setPosition(input_Str(in)); 
-	cout << " Введите специальность: ";
+	std::cout << " Введите специальность: ";
 	obj.setSpeciality(input_Str(in));
-	cout << " Введите количество научных трудов: ";
+	std::cout << " Введите количество научных трудов: ";
 	obj.setListpapers(input_INT(in,0,500));
 	return in;
 }
 
-ostream& operator<<(ostream& out, Teacher& obj)
+std::ostream& operator<<(std::ostream& out, Teacher& obj)
 {
 	out << dynamic_cast<Person&>(obj);
-	out << setw(18) << std::right << obj.Position 
-		<< setw(18) << std::right << obj.Speciality 
-		<< setw(17) << std::right << obj.Listpapers;
+	out << std::setw(18) << std::right << obj.Position 
+		<< std::setw(18) << std::right << obj.Speciality 
+		<< std::setw(17) << std::right << obj.Listpapers;
 	return out;
+}
+
+std::ifstream& operator>>(std::ifstream& finT, Teacher& objT)
+{
+	finT >> dynamic_cast<Person&>(objT)
+		>> objT.Position >> objT.Speciality >> objT.Listpapers;
+	return finT;
+}
+
+std::ofstream& operator <<(std::ofstream& foutT, Teacher& objT)
+{
+	foutT << dynamic_cast<Person&>(objT)
+		<< objT.Position << " " << objT.Speciality << " " << objT.Listpapers << std::endl;
+	return foutT;
+}
+
+std::fstream& operator>>(std::fstream& f, Teacher& objT)
+{
+	f >> dynamic_cast<Person&>(objT)
+		>> objT.Position >> objT.Speciality >> objT.Listpapers;
+	return f;
+}
+
+std::fstream& operator<<(std::fstream& f, Teacher& objT)
+{
+	f << dynamic_cast<Person&>(objT)
+		<< objT.Position << " " << objT.Speciality << " " << objT.Listpapers << std::endl;
+	return f;
 }

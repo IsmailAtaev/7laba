@@ -1,20 +1,22 @@
 #pragma once
-#include"Person.h"
+#include "Person.h"
+#include <istream>
+#include <ostream>
 
 class Party : virtual public Person
 {
 protected:
-	string NameParty;
-	string Biogrophy;
+	std::string NameParty;
+	std::string Biogrophy;
 public:
-	Party(string Fname = "", string Lname = "", int YearOfBirth = 0, string NameParty = "", string Biogrophy = "");
+	Party(std::string Fname = "", std::string Lname = "", int YearOfBirth = 0, std::string NameParty = "", std::string Biogrophy = "");
 	Party(const Party& obj);
 
-	void setNameParty(const string objNameParty);
-	void setBiogrophy(const string objBiogrophy);
+	void setNameParty(const std::string objNameParty);
+	void setBiogrophy(const std::string objBiogrophy);
 
-	string getNameParty()const;
-	string getBiogrophy()const;
+	std::string getNameParty()const;
+	std::string getBiogrophy()const;
 
 	static void title();
 
@@ -24,7 +26,15 @@ public:
 	bool operator==(Party& obje);
 
 	Party& operator =(const Party& obj);
-	friend istream& operator>>(istream& in, Party&);
-	friend ostream& operator<<(ostream& out, Party&);
+	friend std::istream& operator>>(std::istream& in, Party&);
+	friend std::ostream& operator<<(std::ostream& out, Party&);
+
+	friend std::ifstream& operator >> (std::ifstream& finPa, Party& objPa);
+	friend std::ofstream& operator << (std::ofstream& foutPa, Party& objPa);
+	
+	friend std::fstream& operator>> (std::fstream& f, Party& objT);
+	friend std::fstream& operator<< (std::fstream& f, Party& objT);
+
+
 	~Party() { }
 };

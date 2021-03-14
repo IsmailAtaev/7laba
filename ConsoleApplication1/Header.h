@@ -1,5 +1,6 @@
 #pragma once
 #include "myExeption.h"
+#include <iostream>
 #include <istream>
 #include "Person.h"
 #include <exception>
@@ -44,7 +45,7 @@ inline int input_INT(std::istream& in,int t,int k)
 		{
 			flags = 0;
 			in >> temp;
-			flags = std::cin.rdstate();
+			//flags = std::cin.rdstate();
 			
 			if (temp >= INT_MAX || temp <= INT_MIN) 
 				throw std::overflow_error(" Диапозон значени привышает int 2147483647  ");
@@ -58,7 +59,8 @@ inline int input_INT(std::istream& in,int t,int k)
 		}
 		catch (std::overflow_error& exz) {
 			std::cout << exz.what() << std::endl;
-			rewind(stdin);
+			rewind(stdin); 
+			
 			in.clear(0);
 			system("pause");
 			flags = 1;

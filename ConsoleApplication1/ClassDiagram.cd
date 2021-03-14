@@ -3,7 +3,7 @@
   <Class Name="Interface&lt;T&gt;">
     <Position X="18" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAIAAAAAAAAAgAAAAAAAAAAAAAAIAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAIAAAAABAAAgQAAAAAAAAAAAAAIAAAQA=</HashCode>
       <FileName>Interface.h</FileName>
     </TypeIdentifier>
   </Class>
@@ -64,6 +64,20 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgCAAAAgAAAAEAAA=</HashCode>
       <FileName>myExeption.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="File">
+    <Position X="11.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAABAAAAAAAAECAAAAEAAAAAAAAA=</HashCode>
+      <FileName>File.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FileTXT&lt;T&gt;">
+    <Position X="11.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAIAAAAAAAAAAAABAQAAAAABAAQAAAIA=</HashCode>
+      <FileName>File.h</FileName>
     </TypeIdentifier>
   </Class>
   <Struct Name="Node&lt;T&gt;">

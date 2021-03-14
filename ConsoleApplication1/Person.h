@@ -1,11 +1,11 @@
 #pragma once
 #include <string>
+#include <fstream>
 #include <iostream>
 #include <iomanip>
 #include "Header.h"
 #include "myExeption.h"
 
-using namespace std;
 
 class Person
 {
@@ -30,5 +30,14 @@ public:
 
 	friend std::istream& operator >> (std::istream& in, Person&);
 	friend std::ostream& operator << (std::ostream& out, Person&);
+
+
+	friend std::ifstream& operator >> (std::ifstream& finP, Person& objP);
+	friend std::ofstream& operator << (std::ofstream& foutP,Person& objP);
+
+
+	friend std::fstream& operator>> (std::fstream& f, Person& objP);
+	friend std::fstream& operator<< (std::fstream& f, Person& objP);
+	
 	~Person() {	}
 };

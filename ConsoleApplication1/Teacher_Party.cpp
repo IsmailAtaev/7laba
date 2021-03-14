@@ -170,13 +170,13 @@ void Teacher_Party::vvodSearch()
 			break;
 		}
 		case'6': {
-			std::cout << " ¬ведите количество научных трудов: "; cin >> count;
+			std::cout << " ¬ведите количество научных трудов: "; std::cin >> count;
 			this->setListpapers(count);
 			break;
 		}
 		case'7': std::cout << " ¬ведите название партии. "; std::cin >> this->NameParty; break;
 		case'8': std::cout << " ¬ведите автобиографи€. "; std::cin >> this->Biogrophy; break;
-		case'9': std::cout << " ¬ведите рол в партии. "; cin >> this->Rol_In_Party; break;
+		case'9': std::cout << " ¬ведите рол в партии. "; std::cin >> this->Rol_In_Party; break;
 		default:
 			break;
 	}
@@ -201,4 +201,47 @@ std::ostream& operator<<(std::ostream& out, Teacher_Party& objParty)
 		<< std::setw(25) << std::right << objParty.Biogrophy
 		<< std::setw(23) << std::right << objParty.Rol_In_Party << std::endl;
 	return out;
+}
+
+std::ifstream& operator>>(std::ifstream& finTP, Teacher_Party& objTP)
+{
+	finTP >> dynamic_cast<Teacher&>(objTP)
+		>> objTP.NameParty
+		>> objTP.Biogrophy
+		>> objTP.Rol_In_Party;
+	return finTP;
+}
+
+std::ofstream& operator<<(std::ofstream& foutTP, Teacher_Party& objTP)
+{
+	foutTP << dynamic_cast<Person&>(objTP)
+		<< objTP.getPosition() <<" "
+		<< objTP.getSpeciality() << " "
+		<< objTP.getListpapers() << " "
+		<< objTP.NameParty << " "
+		<< objTP.Biogrophy << " "
+		<< objTP.Rol_In_Party << std::endl;
+	return foutTP;
+}
+
+
+
+std::fstream& operator>>(std::fstream& f, Teacher_Party& objTP)
+{
+	f >> dynamic_cast<Teacher&>(objTP)
+		>> objTP.NameParty >> objTP.Biogrophy >> objTP.Rol_In_Party;
+	return f;
+}
+
+std::fstream& operator<<(std::fstream& f, Teacher_Party& objTP)
+{
+
+	f << dynamic_cast<Person&>(objTP)
+		<< objTP.getPosition() << " "
+		<< objTP.getSpeciality() << " "
+		<< objTP.getListpapers() << " "
+		<< objTP.NameParty << " "
+		<< objTP.Biogrophy << " "
+		<< objTP.Rol_In_Party << std::endl;
+	return f;
 }
