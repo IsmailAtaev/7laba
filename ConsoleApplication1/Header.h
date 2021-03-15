@@ -45,12 +45,9 @@ inline int input_INT(std::istream& in,int t,int k)
 		{
 			flags = 0;
 			in >> temp;
-			//flags = std::cin.rdstate();
-			
 			if (temp >= INT_MAX || temp <= INT_MIN) 
 				throw std::overflow_error(" Диапозон значени привышает int 2147483647  ");
 
-			//if ((flags & std::ios::failbit) || in.peek() != '\n') 
 			if(!in || in.peek() != '\n')
 			throw myExeption_Inpit(4005, " Некоректный ввод\n Введите только целые числа  !!!");
 				

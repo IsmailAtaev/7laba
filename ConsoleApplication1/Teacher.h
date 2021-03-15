@@ -29,9 +29,6 @@ public:
 	friend std::istream& operator>>(std::istream& in, Teacher&);
 	friend std::ostream& operator<<(std::ostream& out, Teacher&);
 
-	friend std::ifstream& operator >> (std::ifstream& finT, Teacher& objT);
-	friend std::ofstream& operator << (std::ofstream& foutT, Teacher& objT);
-
 	friend std::fstream& operator>> (std::fstream& f, Teacher& objT);
 	friend std::fstream& operator<< (std::fstream& f, Teacher& objT);
 

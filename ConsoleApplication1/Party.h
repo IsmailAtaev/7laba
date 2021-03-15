@@ -29,12 +29,8 @@ public:
 	friend std::istream& operator>>(std::istream& in, Party&);
 	friend std::ostream& operator<<(std::ostream& out, Party&);
 
-	friend std::ifstream& operator >> (std::ifstream& finPa, Party& objPa);
-	friend std::ofstream& operator << (std::ofstream& foutPa, Party& objPa);
-	
 	friend std::fstream& operator>> (std::fstream& f, Party& objT);
 	friend std::fstream& operator<< (std::fstream& f, Party& objT);
-
 
 	~Party() { }
 };

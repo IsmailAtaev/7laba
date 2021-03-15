@@ -203,20 +203,6 @@ std::ostream& operator<<(std::ostream& out, Teacher& obj)
 	return out;
 }
 
-std::ifstream& operator>>(std::ifstream& finT, Teacher& objT)
-{
-	finT >> dynamic_cast<Person&>(objT)
-		>> objT.Position >> objT.Speciality >> objT.Listpapers;
-	return finT;
-}
-
-std::ofstream& operator <<(std::ofstream& foutT, Teacher& objT)
-{
-	foutT << dynamic_cast<Person&>(objT)
-		<< objT.Position << " " << objT.Speciality << " " << objT.Listpapers << std::endl;
-	return foutT;
-}
-
 std::fstream& operator>>(std::fstream& f, Teacher& objT)
 {
 	f >> dynamic_cast<Person&>(objT)

@@ -167,22 +167,6 @@ std::ostream& operator<<(std::ostream& out, Party& objParty)
 	return out;
 }
 
-std::ifstream& operator>>(std::ifstream& finPa, Party& objPa)
-{
-	finPa >> dynamic_cast<Person&>(objPa)
-		>> objPa.NameParty
-		>> objPa.Biogrophy;
-	return finPa;
-}
-
-std::ofstream& operator<<(std::ofstream& foutPa, Party& objPa)
-{
-	foutPa << dynamic_cast<Person&> (objPa)
-		<< objPa.NameParty << " "
-		<< objPa.Biogrophy << " ";
-	return foutPa;
-}
-
 std::fstream& operator>>(std::fstream& f, Party& objT)
 {
 	f >> dynamic_cast<Person&>(objT) >> objT.NameParty >> objT.Biogrophy;
@@ -191,7 +175,6 @@ std::fstream& operator>>(std::fstream& f, Party& objT)
 
 std::fstream& operator<<(std::fstream& f, Party& objT)
 {
-
 	f << dynamic_cast<Person&> (objT)<< objT.NameParty << " " << objT.Biogrophy << std::endl;
 	return f;
 }

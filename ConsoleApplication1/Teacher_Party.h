@@ -17,13 +17,8 @@ public:
 	friend std::istream& operator>>(std::istream& in, Teacher_Party&);
 	friend std::ostream& operator<<(std::ostream& out, Teacher_Party&);
 
-
-	friend std::ifstream& operator >> (std::ifstream& finTP, Teacher_Party& objTP);
-	friend std::ofstream& operator << (std::ofstream& foutTP, Teacher_Party& objTP);
-
 	friend std::fstream& operator>> (std::fstream& f, Teacher_Party& objTP);
 	friend std::fstream& operator<< (std::fstream& f, Teacher_Party& objTP);
-
 
 	bool operator ==(Teacher_Party& obj);
 

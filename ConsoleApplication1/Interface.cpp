@@ -42,7 +42,6 @@ void Interface<T>::Funck()
     Queue<T> obj;
     T value{};
     T result;
-    char ch = NULL;
     int flags = 0;
     do {
         system("cls");
@@ -57,8 +56,8 @@ void Interface<T>::Funck()
         std::cout << " 8.  Сортировать по Фамили." << std::endl;
         std::cout << " 9.  Читать из файла." << std::endl;
         std::cout << " 10. Запись в файла." << std::endl;
-        std::cout << " 0.  Возврат в главный меню.\t  "; 
-        flags = input_INT(cin,-1,11);
+        std::cout << " 0   Возврат в главный меню.\t  "; 
+        flags = input_INT(cin,0,11);
         system("cls");
         switch (flags)
         {
@@ -131,22 +130,14 @@ void Interface<T>::Funck()
                 FileTXT<T> file(fileN);
                 T data;
                 obj.Clear();
-
-
-
                 while (1) 
                 {
-                    if (file.REndFile())
-                        break;
-                    file.readRrcordInFile(data);
+                    file.readRecordInFile(data);
+                    if (file.REndFile()) break;
                     obj.Enqueue(data);
                 }
-
-
-
                 break;
             }
-
             case 10: {
                 FileTXT<T> file(fileN);
                 while (obj.GetSize() != 0)
@@ -159,5 +150,5 @@ void Interface<T>::Funck()
             default: break;
         }
         system("pause");
-    } while (ch != '0');
+    } while (flags != 0);
 }

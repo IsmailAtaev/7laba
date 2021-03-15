@@ -69,14 +69,14 @@
   <Class Name="File">
     <Position X="11.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAAAAAAAAAABAAAAAAAAECAAAAEAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAgAAAAAAAABAAAAAAAAECAAAAEAAAAAAAAA=</HashCode>
       <FileName>File.h</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="FileTXT&lt;T&gt;">
     <Position X="11.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAAAIAAAAAAAAAAAABAQAAAAABAAQAAAIA=</HashCode>
+      <HashCode>AAAAAAABAAAAAIAAAAAAAAAAAAAAQAAAAABAAAAAAIA=</HashCode>
       <FileName>File.h</FileName>
     </TypeIdentifier>
   </Class>

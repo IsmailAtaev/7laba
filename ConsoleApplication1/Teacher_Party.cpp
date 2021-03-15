@@ -203,29 +203,6 @@ std::ostream& operator<<(std::ostream& out, Teacher_Party& objParty)
 	return out;
 }
 
-std::ifstream& operator>>(std::ifstream& finTP, Teacher_Party& objTP)
-{
-	finTP >> dynamic_cast<Teacher&>(objTP)
-		>> objTP.NameParty
-		>> objTP.Biogrophy
-		>> objTP.Rol_In_Party;
-	return finTP;
-}
-
-std::ofstream& operator<<(std::ofstream& foutTP, Teacher_Party& objTP)
-{
-	foutTP << dynamic_cast<Person&>(objTP)
-		<< objTP.getPosition() <<" "
-		<< objTP.getSpeciality() << " "
-		<< objTP.getListpapers() << " "
-		<< objTP.NameParty << " "
-		<< objTP.Biogrophy << " "
-		<< objTP.Rol_In_Party << std::endl;
-	return foutTP;
-}
-
-
-
 std::fstream& operator>>(std::fstream& f, Teacher_Party& objTP)
 {
 	f >> dynamic_cast<Teacher&>(objTP)
@@ -235,7 +212,6 @@ std::fstream& operator>>(std::fstream& f, Teacher_Party& objTP)
 
 std::fstream& operator<<(std::fstream& f, Teacher_Party& objTP)
 {
-
 	f << dynamic_cast<Person&>(objTP)
 		<< objTP.getPosition() << " "
 		<< objTP.getSpeciality() << " "
